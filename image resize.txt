@@ -1,0 +1,41 @@
+Image Resize script
+
+- Changed the header content type to image/jpeg
+- Checked if there is a file to be resized
+	If there is:
+	- $image was used to get the name of the file from the input field
+	- $image_size was used to get the array of width, height and image type 
+	  from the getimagesize method.
+	- $image_width was used to get the value of the width from the $image_size
+	- $image_height was used to get the value of the height from the $image_size
+	- $image_width was added to $image_height and divided by the result from $image_width 
+	  multiplied the result of $image_height divided by 130 and was assigned to
+	  $new_size.
+	- $new_width specifies the $image_width multiplied by $new_size.
+	- $new_height specifies the $image_height multiplied by $new_size.
+
+	- $new_image specifies a new image created using imagecreatetruecolor method 
+	  carrying the $new_width and $new_height as parameters.
+	- $old_image specifies the imagecreatefromjpeg method with $image passed into it.
+	- The imagecopyresized function was called with these parameters
+		- $new_image as the destintion image
+		- $old_image as the source image
+		- 0 as destination x-cordinate value
+		- 0 as the destination y-cordinate value
+		- 0 as the source x-cordinate value
+		- 0 as the source y-cordinate value
+		- $new_width as the destination width
+		- $new_height as the destination height
+		- $image_width as the source width
+		- $image_height as the source height
+	- imagejpeg method was called with the $new_image as a paramter.
+
+
+
+MOTIVATIONS
+Writing this code was really not very easy especially when you expected an outcome
+you couldn't get it because of errors. 
+Debugging this script and making sure i was able to get the required new image as
+i wanted was challenging. I was happy when I finally got it and I have gained tremendous 
+knowledge from this script.
+	 
